@@ -154,6 +154,15 @@ const EventDetail = () => {
       >
         ← Back to Events
       </button>
+      
+      {['judge', 'admin', 'superadmin'].includes(user?.role) && (
+  <button
+    onClick={() => navigate(`/scoring/${id}`)}
+    className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2 rounded-lg transition"
+  >
+    🎯 Open Scoring Panel
+  </button>
+)}
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-6">
         <div className="flex justify-between items-start">

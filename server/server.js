@@ -25,6 +25,9 @@ const io = new Server(server, {
     }
 });
 
+const socketHandler = require('./sockets/socketHandler');
+socketHandler(io);
+
 // Make io accessible in routes
 app.set("io", io);
 
@@ -39,6 +42,8 @@ app.use(cookieParser());
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use('/api/events', require('./routes/eventRoutes'));
 app.use('/api/categories', require('./routes/categoryRoutes'));
+app.use('/api/scores',  require('./routes/scoreRoutes'));
+app.use('/api/results', require('./routes/resultRoutes'));
 // More routes added per phase...
 
 // Health check

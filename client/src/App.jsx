@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import EventDetail from "./pages/EventDetail";
 import Events from "./pages/Events";
+import Scoring from "./pages/Scoring";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 
 function App() {
@@ -20,7 +21,6 @@ function App() {
 
                     {/* Protected — all authenticated users */}
                     <Route element={<ProtectedRoute />}>
-                        
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/events" element={<Events />} />
                         <Route path="/events/:id" element={<EventDetail />} />
@@ -29,9 +29,12 @@ function App() {
                     {/* Superadmin only example */}
                     <Route
                         element={
-                            <ProtectedRoute allowedRoles={["superadmin"]} />
+                            <ProtectedRoute
+                                allowedRoles={["superadmin", "admin", "judge"]}
+                            />
                         }
                     >
+                        <Route path="/scoring/:eventId" element={<Scoring />} />
                         {/* <Route path="/users" element={<Users />} /> */}
                     </Route>
 
