@@ -5,6 +5,8 @@ import { store } from "./store/store";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import EventDetail from "./pages/EventDetail";
+import Events from "./pages/Events";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 
 function App() {
@@ -18,7 +20,10 @@ function App() {
 
                     {/* Protected — all authenticated users */}
                     <Route element={<ProtectedRoute />}>
+                        
                         <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/events" element={<Events />} />
+                        <Route path="/events/:id" element={<EventDetail />} />
                     </Route>
 
                     {/* Superadmin only example */}

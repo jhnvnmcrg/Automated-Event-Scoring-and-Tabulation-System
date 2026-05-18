@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../store/slices/authSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Dashboard = () => {
     const { user } = useSelector(state => state.auth);
@@ -24,6 +24,9 @@ const Dashboard = () => {
                             {user?.role}
                         </span>
                     </span>
+                    <Link to="/events" className="text-sm text-white hover:text-blue-200 font-medium">
+  Events
+</Link>
                     <button
                         onClick={handleLogout}
                         className="bg-white text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-lg hover:bg-gray-100 transition"

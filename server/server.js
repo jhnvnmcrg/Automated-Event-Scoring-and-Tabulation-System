@@ -37,6 +37,8 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use('/api/events', require('./routes/eventRoutes'));
+app.use('/api/categories', require('./routes/categoryRoutes'));
 // More routes added per phase...
 
 // Health check
