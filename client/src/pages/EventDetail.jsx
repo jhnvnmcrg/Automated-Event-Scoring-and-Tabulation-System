@@ -154,7 +154,21 @@ const EventDetail = () => {
       >
         ← Back to Events
       </button>
-      
+      <button
+  onClick={() => navigate(`/leaderboard/${id}`)}
+  className="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold px-5 py-2 rounded-lg transition"
+>
+  🏆 Leaderboard
+</button>
+
+{['superadmin', 'admin'].includes(user?.role) && (
+  <button
+    onClick={() => navigate(`/results/${id}`)}
+    className="bg-gray-700 hover:bg-gray-800 text-white text-sm font-semibold px-5 py-2 rounded-lg transition"
+  >
+    📊 Summary
+  </button>
+)}
       {['judge', 'admin', 'superadmin'].includes(user?.role) && (
   <button
     onClick={() => navigate(`/scoring/${id}`)}

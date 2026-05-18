@@ -8,6 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import EventDetail from "./pages/EventDetail";
 import Events from "./pages/Events";
 import Scoring from "./pages/Scoring";
+import Leaderboard from "./pages/Leaderboard";
+import ResultsSummary from "./pages/ResultsSummary";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 
 function App() {
@@ -21,9 +23,19 @@ function App() {
 
                     {/* Protected — all authenticated users */}
                     <Route element={<ProtectedRoute />}>
+                        
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/events" element={<Events />} />
                         <Route path="/events/:id" element={<EventDetail />} />
+                        <Route path="/scoring/:eventId" element={<Scoring />} />
+                        <Route
+                            path="/leaderboard/:eventId"
+                            element={<Leaderboard />}
+                        />
+                        <Route
+                            path="/results/:eventId"
+                            element={<ResultsSummary />}
+                        />
                     </Route>
 
                     {/* Superadmin only example */}
