@@ -5,6 +5,7 @@ import API from '../api/axios';
 import Modal from '../components/common/Modal';
 import StatusBadge from '../components/common/StatusBadge';
 import toast from 'react-hot-toast';
+import Layout from '../components/common/Layout';
 
 const EventDetail = () => {
   const { id }   = useParams();
@@ -145,7 +146,7 @@ const EventDetail = () => {
   );
 
   return (
-    <div className="p-6 max-w-6xl mx-auto">
+    <Layout>
 
       {/* Back + Event Header */}
       <button
@@ -436,7 +437,7 @@ const EventDetail = () => {
           </div>
         </div>
       </Modal>
-    </div>
+    </Layout>
   );
 };
 

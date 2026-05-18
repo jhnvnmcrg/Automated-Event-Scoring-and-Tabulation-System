@@ -44,6 +44,7 @@ app.use('/api/events', require('./routes/eventRoutes'));
 app.use('/api/categories', require('./routes/categoryRoutes'));
 app.use('/api/scores',  require('./routes/scoreRoutes'));
 app.use('/api/results', require('./routes/resultRoutes'));
+app.use('/api/export', require('./routes/exportRoutes'));
 // More routes added per phase...
 
 // Health check
