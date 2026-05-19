@@ -8,6 +8,7 @@ import ParticipantResultCard from "../components/leaderboard/ParticipantResultCa
 import LeaderboardChart from "../components/leaderboard/LeaderboardChart";
 import ScoringProgress from "../components/leaderboard/ScoringProgress";
 import Layout from "../components/common/Layout";
+import ShareLeaderboardButton from "../components/common/ShareLeaderboardButton";
 
 const Leaderboard = () => {
     const { eventId } = useParams();
@@ -107,6 +108,7 @@ const Leaderboard = () => {
                                     : "⟳ Recalculate"}
                             </button>
                         )}
+                        <ShareLeaderboardButton eventId={eventId} categoryId={activeTab} />
                     </div>
                 </div>
             </div>

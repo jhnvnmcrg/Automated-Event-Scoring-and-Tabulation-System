@@ -7,6 +7,7 @@ import StatusBadge from "../components/common/StatusBadge";
 import Layout from "../components/common/Layout";
 import toast from "react-hot-toast";
 import ScoreTable from '../components/admin/ScoreTable';
+import ShareLeaderboardButton from '../components/common/ShareLeaderboardButton';
 
 const EventDetail = () => {
     const { id } = useParams();
@@ -276,6 +277,7 @@ const EventDetail = () => {
 
                     {/* Action buttons */}
                     <div className="flex flex-wrap gap-2 items-center">
+                      <ShareLeaderboardButton eventId={id} />
                         <StatusBadge status={event.status} />
 
                         <button
